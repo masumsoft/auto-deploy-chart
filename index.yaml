@@ -8,6 +8,6 @@ entries:
     icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png
     name: auto-deploy-app
     urls:
-    - https://github.com/masumsoft/auto-deploy-chart/releases/download/v2.40.0/auto-deploy-app-2.40.0.tgz
-    version: 2.40.0
+    - https://github.com/masumsoft/auto-deploy-chart/releases/download/v2.40.1/auto-deploy-app-2.40.1.tgz
+    version: 2.40.1
 generated: "2023-05-04T14:19:59.666223+06:00"
