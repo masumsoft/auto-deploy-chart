@@ -18,6 +18,9 @@ lifecycle: {}
 #     command: ["/bin/sh", "-c", "sleep 10"]
 podAnnotations: {}
 nodeSelector: {}
+securityContext: {}
+containerSecurityContext: {}
+hostNetwork: false
 dnsPolicy: {}
 dnsConfig: {}
 #    nameservers:
@@ -197,6 +200,9 @@ persistence:
         # For example, GKE automatically chooses a default storage class and allocate a physical storage.
         # See https://cloud.google.com/kubernetes-engine/docs/concepts/persistent-volumes for more information.
         # storageClass: "myStorage"
+        # You can also reserve a persistent volume using `volumeName`
+        # See https://kubernetes.io/docs/concepts/storage/persistent-volumes/#reserving-a-persistentvolume
+        # volumeName: "my-vol"
 
 ## Configure extra Volumes
 ## ref: https://kubernetes.io/docs/concepts/storage/volumes/
@@ -225,6 +231,12 @@ extraEnv: []
 workers: {}
   # worker:
   #   replicaCount: 1
+  #   image:
+  #     repository: gitlab.example.com/group/project
+  #     tag: stable
+  #     pullPolicy: IfNotPresent
+  #     secrets:
+  #       - name: gitlab-registry
   #   terminationGracePeriodSeconds: 60
   #   hostAliases:
   #   - ip: X.X.X.X
@@ -270,6 +282,7 @@ workers: {}
   #   - stop_worker
   #   extraVolumes: []
   #   extraVolumeMounts: []
+  #   extraEnv: []
   #   extraEnvFrom: []
 
 cronjobs: {}
