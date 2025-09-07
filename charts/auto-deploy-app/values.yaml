@@ -90,8 +90,8 @@ ingress:
   enabled: true
   path: "/"
   tls:
-    enabled: true
-    acme: true
+    enabled: false
+    acme: false
     secretName: ""
     useDefaultSecret: false
   annotations:
